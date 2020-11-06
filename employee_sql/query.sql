@@ -93,3 +93,13 @@ ORDER BY last_name ASC
 
 SELECT * FROM sales_dev_employees
 
+-- 8. COUNT NAMES VIEW
+	-- In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
+
+CREATE VIEW count_names AS
+SELECT last_name, COUNT(last_name) AS count 
+FROM employees
+GROUP BY last_name
+ORDER BY count DESC
+
+SELECT * FROM count_names
