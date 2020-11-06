@@ -64,7 +64,8 @@ SELECT * FROM employee_filtered
 
 -- 6. SALES EMPLOYEES VIEW
 	-- List all employees in the Sales department, including their employee number, last name, first name, and department name.
-	
+
+CREATE VIEW sales_employees AS
 SELECT e.emp_no, e.last_name, e.first_name, dept.dept_name
 FROM employees AS e
 JOIN dept_emp AS de ON
@@ -73,3 +74,7 @@ JOIN departments AS dept ON
 de.dept_no = dept.dept_no
 WHERE dept_name = 'Sales'
 ORDER BY last_name ASC
+
+-- 7. SALES and DEVELOPMENT VIEW
+	-- List all employees in the Sales and Development departments, 
+	-- including their employee number, last name, first name, and department name.
